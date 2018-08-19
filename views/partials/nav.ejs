@@ -5,7 +5,11 @@
 					<a class="menu_trigger" href="#">menu</a>
 					<nav id="nav">
 						<ul>
+							<%if (res.locals.user) { %>
+							<li><%= res.locals.user %></li>
+							<% } else { %>
 							<li><a href="/entrar">Entrar</a></li>
+							<% } %>
 						</ul>
 					</nav>
 				</div>
