@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<% include ../partials/head %>
+
+<body>
+	<div id="wrapper" class="homepage">
+		<div class="wrapper-holder">
+			<% include ../partials/nav %>
+			<div class="dvdr"></div>
+			<section class="promo">
+				<div class="slider-wrap">
+					<ul class="slider">
+						<li>
+							<img class="slide" src="images/img-slide01.jpg" alt="">
+							<img class="slide-mask" src="images/bg_slider-mask.png" alt="">
+							<div class="slide-info">
+								<h1><a href="#">O Rique está chegando...</a></h1>
+								<p>Venha participar do chá de fraldas do nosso menino.</p>
+								<a class="btn red" href="#">Clique aqui</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section id="main">
+				<div class="event-wrap">
+					<div class="widget-boxes">
+						<div class="box">
+							<a href="#">
+								<div class="box-info about">
+									<h2>Recém-nascido</h2>
+									<p>Objetivo: 600 fraldas</p>
+									<p>Como estamos</p><progress name="progress_rn" max="100" value="80"></progress>
+								</div>
+							</a>
+						</div>
+						<div class="box">
+							<a href="#">
+								<div class="box-info experience">
+									<h2>Até 6 meses</h2>
+									<p>Objetivo: 600 fraldas</p>
+									<p>Como estamos</p><progress name="progress_ate6" max="100" value="50"></progress>
+								</div>
+							</a>
+						</div>
+						<div class="box">
+							<a href="#">
+								<div class="box-info fun">
+									<h2>Depois de 6 meses</h2>
+									<p>Objetivo: 600 fraldas</p>
+									<p>Como estamos</p><progress name="progress_depois6" max="100" value="30"></progress>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="top-blue-border"></div>
+		<% include ../partials/footer %>
+	</div>
+
+	<% include ../partials/scripts %>
+</body>
+
+</html>

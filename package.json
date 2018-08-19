@@ -1,0 +1,20 @@
+{
+  "name": "chadefraldas",
+  "version": "1.0.0",
+  "description": "App simples para o Chá de Fraldas do Henrique.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ricardo da Silva <ricardolopes18@yahoo.com.br>",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-session": "^2.0.0-beta.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0"
+  }
+}

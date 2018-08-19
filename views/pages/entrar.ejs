@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+
+<% include ../partials/head %>
+
+<body>
+	<div id="wrapper" class="about">
+		<div class="wrapper-holder">
+			<% include ../partials/nav %>
+			<div class="dvdr"></div>
+			<div class="container">
+				<section id="main">
+                    <h1>Faça login com suas redes sociais.</h1>
+                    <div class="inline">
+                        <img src="images/img-person01.jpg" alt="Facebook" class="social-links">
+                        <a class="btn blue" href="/auth/facebook">Clique aqui</a>
+                    </div>
+                    <div class="inline">
+                        <img src="images/img-person02.jpg" alt="Google" class="social-links">
+                        <a class="btn red" href="/auth/google">Clique aqui</a>
+                    </div>
+				</section>
+			</div>
+		</div>
+		<div class="top-blue-border"></div>
+		<% include ../partials/footer %>	
+	</div>
+	
+	<% include ../partials/scripts %>
+</body>
+</html>
