@@ -4,7 +4,8 @@ module.exports = app => {
   app.get(
     "/auth/google",
     passport.authenticate("google", {
-      scope: ["profile", "email"]
+      scope: ["profile", "email"],
+      failureRedirect: '/entrar'
     })
   );
 
@@ -14,7 +15,8 @@ module.exports = app => {
   app.get(
       "/auth/facebook",
       passport.authenticate("facebook", {
-        scope: ['email']
+        scope: ['email'],
+        failureRedirect: '/entrar'
         })
     );
     
