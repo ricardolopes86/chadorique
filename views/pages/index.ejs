@@ -63,7 +63,7 @@
 									<h2>Recém-nascido+</h2>
 									<strong><p>3 a 6 kg</p></strong>
 									<p>Objetivo: 8 pacotes</p>
-									<p>Como estamos: <%= Math.round((rn_percentil * 0.01) * 8) %> pcts.</p><progress name="progress_rn" max="100" title="<%= rn_percentil %>%" value="<%= rn_percentil %>"></progress>
+									<p>Como estamos: <%= Math.floor((rn_percentil * 0.01) * 8) %> pcts.</p><progress name="progress_rn" max="100" title="<%= rn_percentil %>%" value="<%= rn_percentil %>"></progress>
 								</div>
 						</div>
 						<div class="box">
@@ -71,7 +71,7 @@
 									<h2>Fraldas P</h2>
 									<strong><p>5 a 7,5 kg</p></strong>
 									<p>Objetivo: 15 pacotes</p>
-									<p>Como estamos: <%= Math.round((p_percentil * 0.01) * 15) %> pcts.</p><progress name="progress_p" max="100" title="<%= p_percentil %>%" value="<%= p_percentil %>"></progress>
+									<p>Como estamos: <%= Math.floor((p_percentil * 0.01) * 15) %> pcts.</p><progress name="progress_p" max="100" title="<%= p_percentil %>%" value="<%= p_percentil %>"></progress>
 								</div>
 						</div>
 						<div class="box">
@@ -79,7 +79,7 @@
 									<h2>Fraldas M</h2>
 									<strong><p>6 a 9,5 kg</p></strong>
 									<p>Objetivo: 38 pacotes</p>
-									<p>Como estamos: <%= Math.round((m_percentil * 0.01) * 38) %> pcts.</p><progress name="progress_m" max="100" title="<%= m_percentil %>%" value="<%= m_percentil %>"></progress>
+									<p>Como estamos: <%= Math.floor((m_percentil * 0.01) * 38) %> pcts.</p><progress name="progress_m" max="100" title="<%= m_percentil %>%" value="<%= m_percentil %>"></progress>
 								</div>
 						</div>
 					</div>

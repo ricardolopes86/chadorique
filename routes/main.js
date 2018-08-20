@@ -20,9 +20,9 @@ module.exports = app => {
         fraldas_p = parseInt(fraldas_p + user.fraldas_p);
         fraldas_m = parseInt(fraldas_m + user.fraldas_m);
       }
-      rn = Math.round((rn / 8) * 100);
-      fraldas_p = Math.round((fraldas_p / 15) * 100)
-      fraldas_m = Math.round((fraldas_m / 38) * 100)
+      rn = Math.floor((rn / 8) * 100);
+      fraldas_p = Math.floor((fraldas_p / 15) * 100)
+      fraldas_m = Math.floor((fraldas_m / 38) * 100)
       if (res.locals.loggedIn){
         dados_usuario = getUserValues(req.user.appid);
         dados_usuario.then(user => {
