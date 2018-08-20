@@ -18,7 +18,7 @@ passport.use(
     domain: keys.auth0Domain,
     clientID: keys.auth0ClientID,
     clientSecret: keys.auth0ClientSecret,
-    callbackURL: 'https://fraldas-rique.herokuapp.com/callback'
+    callbackURL: 'http://localhost:3000/callback'
    },
    function(accessToken, refreshToken, extraParams, profile, done) {
      // accessToken is the token to call Auth0 API (not needed in the most cases)
