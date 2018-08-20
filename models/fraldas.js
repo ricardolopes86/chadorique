@@ -1,19 +1,26 @@
 const mongoose = require('mongoose');
+const User = require('./users');
+
 const { Schema } = mongoose;
 
 const fraldasSchema = new Schema({
-    rn: {
+    rn_mais: {
         type: Number,
         default: 0
     },
-    ate6: {
+    fraldas_P: {
         type: Number,
         default: 0
     },
-    depois6: {
+    fraldas_M: {
         type: Number,
         default: 0
-    }
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'users'}
 });
 
-mongoose.model('fraldas', fraldasSchema);
+const Fraldas = mongoose.model('fraldas', fraldasSchema);
+
+module.exports = Fraldas;

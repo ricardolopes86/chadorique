@@ -12,6 +12,33 @@
 		<div class="wrapper-holder">
 			<% include ../partials/nav %>
 			<div class="dvdr"></div>
+			<%if (loggedIn) { %>
+			<section class="promo">
+				<div class="slider-wrap">
+					<ul class="slider">
+						<li>
+							<img class="slide" src="images/img-slide02.jpg" alt="">
+							<img class="slide-mask" src="images/bg_slider-mask.png" alt="">
+							<div class="slide-info-form">
+								<h1>O que quero dar:</h1>
+								<p>Recém-nascido+ (3 a 6kg):</p>
+								<img src="images/minus_btn.png" alt="Diminuir Quantidade" class="form-btn" id="rn_minus"><span id="numero_rn" class="promo numeros"><%= dados.rn_mais %></span><img id="rn_mais" class="form-btn" src="images/plus_btn.png" alt="Aumentar Quantidade">
+								<p>Fraldas P (5 a 7,5kg):</p>
+								<img src="images/minus_btn.png" alt="Diminuir Quantidade" class="form-btn" id="p_minus"><span id="numero_p" class="promo numeros"><%= dados.fraldas_p %></span><img id="p_mais" class="form-btn" src="images/plus_btn.png" alt="Aumentar Quantidade">
+								<p>Fraldas M (6 a 9,5kg):</p>
+								<img src="images/minus_btn.png" alt="Diminuir Quantidade" class="form-btn" id="m_minus"><span id="numero_m" class="promo numeros"><%= dados.fraldas_m %></span><img id="m_mais" class="form-btn" src="images/plus_btn.png" alt="Aumentar Quantidade">
+								<form action="/salvar" method="post" name="form_fraldas" >
+									<input type="hidden" name="rn_mais" id="rn_mais" value="<%= dados.rn_mais %>">
+									<input type="hidden" name="fraldas_p" id="fraldas_p" value="<%= dados.fraldas_p %>">
+									<input type="hidden" name="fraldas_m" id="fraldas_m" value="<%= dados.fraldas_m %>">
+								</form>
+								<a class="btn red" href="#" id="salvar">Salvar</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<% } else { %>
 			<section class="promo">
 				<div class="slider-wrap">
 					<ul class="slider">
@@ -21,41 +48,39 @@
 							<div class="slide-info">
 								<h1><a href="#">O Rique está chegando...</a></h1>
 								<p>Venha participar do chá de fraldas do nosso menino.</p>
-								<a class="btn red" href="#">Clique aqui</a>
+								<a class="btn red" href="/login">Clique aqui</a>
 							</div>
 						</li>
 					</ul>
 				</div>
 			</section>
+			<% } %>
 			<section id="main">
 				<div class="event-wrap">
 					<div class="widget-boxes">
 						<div class="box">
-							<a href="#">
 								<div class="box-info about">
-									<h2>Recém-nascido</h2>
-									<p>Objetivo: 600 fraldas</p>
-									<p>Como estamos</p><progress name="progress_rn" max="100" value="80"></progress>
+									<h2>Recém-nascido+</h2>
+									<strong><p>3 a 6 kg</p></strong>
+									<p>Objetivo: 8 pacotes</p>
+									<p>Como estamos: <%= Math.round((rn_percentil * 0.01) * 8) %> pcts.</p><progress name="progress_rn" max="100" title="<%= rn_percentil %>%" value="<%= rn_percentil %>"></progress>
 								</div>
-							</a>
 						</div>
 						<div class="box">
-							<a href="#">
 								<div class="box-info experience">
-									<h2>Até 6 meses</h2>
-									<p>Objetivo: 600 fraldas</p>
-									<p>Como estamos</p><progress name="progress_ate6" max="100" value="50"></progress>
+									<h2>Fraldas P</h2>
+									<strong><p>5 a 7,5 kg</p></strong>
+									<p>Objetivo: 15 pacotes</p>
+									<p>Como estamos: <%= Math.round((p_percentil * 0.01) * 15) %> pcts.</p><progress name="progress_p" max="100" title="<%= p_percentil %>%" value="<%= p_percentil %>"></progress>
 								</div>
-							</a>
 						</div>
 						<div class="box">
-							<a href="#">
 								<div class="box-info fun">
-									<h2>Depois de 6 meses</h2>
-									<p>Objetivo: 600 fraldas</p>
-									<p>Como estamos</p><progress name="progress_depois6" max="100" value="30"></progress>
+									<h2>Fraldas M</h2>
+									<strong><p>6 a 9,5 kg</p></strong>
+									<p>Objetivo: 38 pacotes</p>
+									<p>Como estamos: <%= Math.round((m_percentil * 0.01) * 38) %> pcts.</p><progress name="progress_m" max="100" title="<%= m_percentil %>%" value="<%= m_percentil %>"></progress>
 								</div>
-							</a>
 						</div>
 					</div>
 				</div>
@@ -64,8 +89,8 @@
 		<div class="top-blue-border"></div>
 		<% include ../partials/footer %>
 	</div>
-
 	<% include ../partials/scripts %>
+	
 </body>
 
 </html>

@@ -1,14 +1,26 @@
 <header id="header">
 				<div class="left-part"></div>
-				<a id="logo" href="/">Chá de Fraldas do Rique</a>
+				<a id="logo" href="/">Chá do Rique</a>
 				<div class="bar-holder">
 					<a class="menu_trigger" href="#">menu</a>
 					<nav id="nav">
 						<ul>
-							<%if (res.locals.user) { %>
-							<li><%= res.locals.user %></li>
+							<%if (loggedIn) { %>
+							<li>
+								Olá, <%= user.displayName %>
+								<img src="<%= user.picture %>" alt="" class="img-rounded"/>
+							</li>
+							<li>
+								<a href="/logout">Sair</a>
+							</li>
+							<li>
+								<a href="/presentes">Presentinhos</a>
+							</li>
 							<% } else { %>
-							<li><a href="/entrar">Entrar</a></li>
+							<li><a href="/login">Entrar</a></li>
+							<li>
+								<a href="/presentes">Presentinhos</a>
+							</li>
 							<% } %>
 						</ul>
 					</nav>

@@ -4,19 +4,21 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
     googleId: String,
     facebookId: String,
-    name: String,
-    rn: {
+    displayName: String,
+    rn_mais: {
         type: Number,
         default: 0
     },
-    ate6: {
+    fraldas_p: {
         type: Number,
         default: 0
     },
-    depois6: {
+    fraldas_m: {
         type: Number,
         default: 0
     }
 });
 
-mongoose.model('users', userSchema);
+const User = mongoose.model('users', userSchema);
+
+module.exports = User;
